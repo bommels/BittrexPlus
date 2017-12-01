@@ -1,0 +1,48 @@
+{
+  "name": "Bittrex Plus (Beta)",
+  "version": "0.2",
+  "manifest_version": 2,
+  "description": "Enhancing your Bittrex.",
+  "homepage_url": "https://twitter.com/TerryBommels",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "https://bittrex.com/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://bittrex.com/*"
+      ],
+      "js": [
+        "js/lib/jquery-3.2.1.min.js",
+        "js/utils.js",
+        "js/general.js"
+      ],
+      "css": [
+        "css/style.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://bittrex.com/Balance"
+      ],
+      "js": [
+        "js/balance.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://bittrex.com/Market/Index?MarketName=BTC-*"
+      ],
+      "js": [
+        "js/market_btc.js"
+      ]
+    }
+  ]
+}
