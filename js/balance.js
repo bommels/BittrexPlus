@@ -21,6 +21,19 @@ function init_balance(token) {
     }
 }
 
+function color_changes() {
+    $('#balanceTable tbody tr td:last-of-type').each(function (i, item) {
+        var val = parseFloat($(item).html().replace("%", ""));
+        $(item).removeClass('pos');
+        $(item).removeClass('neg');
+        if (val < 0) {
+            $(item).addClass('neg');
+        } else if (val > 0) {
+            $(item).addClass('pos');
+        }
+    });
+}
+
 chrome.extension.sendMessage({}, function (response) {
     var readyStateCheckInterval = setInterval(function () {
         if (document.readyState === "complete") {
@@ -33,9 +46,26 @@ chrome.extension.sendMessage({}, function (response) {
             init_balance(token);
 
             init_table('balanceTable', 7);
-            setTimeout(function() {
+            setTimeout(function () {
                 update_table('balanceTable', 7);
+                color_changes()
             }, 600);
+
+            $('.btplus_th_balance').click(function() {
+                $('#balanceTable th:nth-child(8)').click();
+            });
+
+            $('#balanceTable_paginate').click(function () {
+                color_changes();
+            });
+
+            $('button[data-bind="click: balances.queryBalanceSummaryState"]').click(function () {
+                setTimeout(color_changes, 600);
+            });
+
+            $('#balanceTable_filter_input2').on('input', function() {
+                setTimeout(color_changes(), 600);
+            })
         }
     }, 10);
 });

@@ -111,12 +111,30 @@ function init_footer() {
 }
 
 function init_table(id, btc_balance_index) {
-    $('#' + id + ' th:nth-child(' + (btc_balance_index + 1) + ')').after('<th class="col-header col-header-lg-num number sorting" tabindex="0" aria-controls="balanceTable" rowspan="1" colspan="1">Est. ' + USER_CURRENCY + ' value</th>')
+    $('#' + id + ' th:nth-child(' + (btc_balance_index + 1) + ')').after('<th class="col-header col-header-lg-num number sorting btplus_th_balance" tabindex="0" aria-controls="balanceTable" rowspan="1" colspan="1">Est. ' + USER_CURRENCY + ' value</th>')
 
     $('#balanceTable_paginate').click(function () {
         update_table(id, btc_balance_index);
     });
 
+    $('#balanceTable_filter_input2').on('input', function () {
+        setTimeout(function () {
+            update_table(id, btc_balance_index)
+        }, 600);
+    });
+
+    $('#balanceTable_length_option2').on('input', function () {
+        setTimeout(function () {
+            update_table(id, btc_balance_index)
+        }, 600);
+    });
+
+    $('th.col-header').click(function () {
+            setTimeout(function () {
+                update_table(id, btc_balance_index)
+            }, 600);
+        }
+    );
     $('button[data-bind="click: balances.queryBalanceSummaryState"]').click(function () {
             setTimeout(function () {
                 update_table(id, btc_balance_index)

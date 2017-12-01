@@ -1,3 +1,11 @@
+.pos {
+    color: #468d46;
+}
+
+.neg {
+    color: #b84946;
+}
+
 .btplus_balance {
     margin-bottom: 10px;
 }
