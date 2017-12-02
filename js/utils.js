@@ -2,9 +2,47 @@ const RATE_CACHE = 60 * 30;
 const BITCOIN_CACHE = 60;
 const CURRENCY_DECIMALS = 2;
 const BITCOIN_DECIMALS = 4;
+
 const EURO = 'EUR';
 const US_DOLLAR = 'USD';
+const AU_DOLLAR = 'AUD';
+const CA_DOLLAR = 'CAD';
+const HK_DOLLAR = 'HKD';
+const GBP = 'GBP';
+const BGN = 'BGN';
+const BRL = 'BRL';
+const CHF = 'CHF';
+const CNY = 'CNY';
+const CZK = 'CZK';
+const DKK = 'DKK';
+const HRK = 'HRK';
+const HUF = 'HUF';
+const IDR = 'IDR';
+const ILS = 'ILS';
+const INR = 'INR';
+const JPY = 'JPY';
+const KRW = 'KRW';
+const MXN = 'MXN';
+const MYR = 'MYR';
+const NOK = 'NOK';
+const NZD = 'NZD';
+const PHP = 'PHP';
+const PLN = 'PLN';
+const RON = 'RON';
+const RUB = 'RUB';
+const SEK = 'SEK';
+const SGD = 'SGD';
+const THB = 'THB';
+const TRY = 'TRY';
+const ZAR = 'ZAR';
 
+const SUPPORTED_CURRENCIES = [
+    EURO, US_DOLLAR, AU_DOLLAR, CA_DOLLAR, HK_DOLLAR, GBP, BGN, BRL, CHF, CZK, DKK, CNY, HRK, HUF, IDR, ILS, INR,
+    JPY, KRW, MXN, MYR, NOK, NZD, PHP, PLN, RON, RUB, SEK, SGD, THB, TRY, ZAR
+];
+
+
+// temp because no settings page yet
 const USER_CURRENCY = EURO;
 
 
@@ -132,7 +170,7 @@ function init_table(id, btc_balance_index) {
     });
 
     // Make table sortable on estimated currency amount
-    $('.btplus_th_balance').click(function() {
+    $('.btplus_th_balance').click(function () {
         $('#' + id + ' th:nth-child(' + (btc_balance_index + 1) + ')').click();
     });
 
