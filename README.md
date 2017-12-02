@@ -2,7 +2,7 @@
 Chrome extension for Bittrex.com. Only function for now is custom currency support. More features and an official beta release will follow soon.
 
 ## Features
-Supported currencies: USD, AUD, EUR, GBP, CAD, HKD, JPY and every currency listed <a href="https://api.fixer.io/latest?base=USD">here</a>.
+Supported currencies: USD, AUD, EUR, GBP, CAD, HKD, JPY and every currency listed <a href="blob/beta/js/utils.js#L6">here</a>.
 #### General
 - [x] Show BTC price in footer in supported currency.
 - [ ] Bittrex plus options page.
