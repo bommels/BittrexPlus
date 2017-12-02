@@ -20,7 +20,7 @@ Supported currencies: USD, AUD, EUR, GBP, CAD, HKD, JPY and every currency liste
 - [x] Show coin summary prices in supported currency.
 - [ ] Show/calculate trading prices in supported currency.
 
-<p align="center"><img src="https://i.imgur.com/CnV4p8Z.png"></p>
+<p align="center"><img src="https://i.imgur.com/CnV4p8Z.png" height="400"></p>
 
 #### Orders
 - [ ] Calculate estimated BTC price(s) to supported currency.
