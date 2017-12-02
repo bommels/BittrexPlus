@@ -9,3 +9,14 @@
 .btplus_balance {
     margin-bottom: 10px;
 }
+
+.market-stats .wrapper {
+    padding-bottom: 24px !important;
+}
+
+.btplus_currency_summary {
+    float: right;
+    font-size: 10px !important;
+    position: relative !important;
+    top: 5px !important;
+}

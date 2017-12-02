@@ -5,6 +5,7 @@ Chrome extension for Bittrex.com. Only function for now is custom currency suppo
 Supported currencies: USD, AUD, EUR, GBP, CAD, HKD, JPY and every currency listed <a href="https://api.fixer.io/latest?base=USD">here</a>.
 #### General
 - [x] Show BTC price in footer in supported currency.
+- [ ] Bittrex plus options page.
 
 <p align="center"><img src="https://i.imgur.com/DRppZNg.jpg"></p>
 
@@ -16,7 +17,10 @@ Supported currencies: USD, AUD, EUR, GBP, CAD, HKD, JPY and every currency liste
 <p align="center"><img src="https://i.imgur.com/KDAjJuC.jpg"></p>
 
 #### Market
-- [ ] Show coin summary prices in supported currency.
+- [x] Show coin summary prices in supported currency.
 - [ ] Show/calculate trading prices in supported currency.
+
+<p align="center"><img src="https://i.imgur.com/CnV4p8Z.png"></p>
+
 #### Orders
 - [ ] Calculate estimated BTC price(s) to supported currency.
