@@ -44,28 +44,17 @@ chrome.extension.sendMessage({}, function (response) {
             log('Verification token set to ' + token);
 
             init_balance(token);
-
             init_table('balanceTable', 7);
+
+            // Trigger first update
             setTimeout(function () {
                 update_table('balanceTable', 7);
                 color_changes()
-            }, 600);
+            }, 500);
 
-            $('.btplus_th_balance').click(function() {
-                $('#balanceTable th:nth-child(8)').click();
-            });
-
-            $('#balanceTable_paginate').click(function () {
-                color_changes();
-            });
-
-            $('button[data-bind="click: balances.queryBalanceSummaryState"]').click(function () {
+            $('#balanceTable').on('table_update', function () {
                 setTimeout(color_changes, 600);
             });
-
-            $('#balanceTable_filter_input2').on('input', function() {
-                setTimeout(color_changes(), 600);
-            })
         }
     }, 10);
 });

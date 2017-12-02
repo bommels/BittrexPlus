@@ -113,34 +113,34 @@ function init_footer() {
 function init_table(id, btc_balance_index) {
     $('#' + id + ' th:nth-child(' + (btc_balance_index + 1) + ')').after('<th class="col-header col-header-lg-num number sorting btplus_th_balance" tabindex="0" aria-controls="balanceTable" rowspan="1" colspan="1">Est. ' + USER_CURRENCY + ' value</th>')
 
+    // Interactions that change the data in the table
+    // when data changes, re-render rows and custom js
     $('#balanceTable_paginate').click(function () {
-        update_table(id, btc_balance_index);
+        $('#' + id).trigger('update_table');
     });
-
     $('#balanceTable_filter_input2').on('input', function () {
-        setTimeout(function () {
-            update_table(id, btc_balance_index)
-        }, 600);
+        $('#' + id).trigger('update_table');
     });
-
     $('#balanceTable_length_option2').on('input', function () {
-        setTimeout(function () {
-            update_table(id, btc_balance_index)
-        }, 600);
+        $('#' + id).trigger('update_table');
+    });
+    $('th.col-header').click(function () {
+        $('#' + id).trigger('update_table');
+    });
+    $('button[data-bind="click: balances.queryBalanceSummaryState"]').click(function () {
+        $('#' + id).trigger('update_table');
     });
 
-    $('th.col-header').click(function () {
-            setTimeout(function () {
-                update_table(id, btc_balance_index)
-            }, 600);
-        }
-    );
-    $('button[data-bind="click: balances.queryBalanceSummaryState"]').click(function () {
-            setTimeout(function () {
-                update_table(id, btc_balance_index)
-            }, 600);
-        }
-    );
+    // Make table sortable on estimated currency amount
+    $('.btplus_th_balance').click(function() {
+        $('#' + id + ' th:nth-child(' + (btc_balance_index + 1) + ')').click();
+    });
+
+    $('#' + id).on('update_table', function () {
+        setTimeout(function () {
+            update_table(id, btc_balance_index)
+        }, 500);
+    })
 }
 
 function update_table(id, btc_balance_index) {
