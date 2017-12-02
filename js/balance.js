@@ -52,7 +52,7 @@ chrome.extension.sendMessage({}, function (response) {
                 color_changes()
             }, 500);
 
-            $('#balanceTable').on('table_update', function () {
+            $('#balanceTable').on('update_table', function () {
                 setTimeout(color_changes, 600);
             });
         }
